@@ -1,0 +1,56 @@
+name: General report
+description: Something you noticed that isn't tied to a specific test item. A bug, an oddity, a suggestion.
+title: "[general] "
+labels: ["needs-review", "general"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For anything the board doesn't have a card for: an unexpected bug, a rough edge, an idea.
+        If it maps to a specific test item, use that item's card on the board instead so it lands in the right column.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Roughly what area
+      description: Best guess. Leave blank if unsure.
+      options:
+        - "Not sure"
+        - "A trade domain (WOO, MIN, MET, ...)"
+        - "Ranks / progression / the Callings page"
+        - "A workstation or crafting interaction"
+        - "Server / connection / performance"
+        - "Something else"
+    validations:
+      required: false
+
+  - type: textarea
+    id: detail
+    attributes:
+      label: What happened
+      description: What you saw, where, and what you expected instead. Steps to reproduce if you have them.
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Mod version
+      placeholder: e.g. 0.3.56-dev
+    validations:
+      required: false
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Screenshots, chat or log lines. Drag images straight in.
+    validations:
+      required: false
+
+  - type: input
+    id: vsname
+    attributes:
+      label: Your Vintage Story username
+    validations:
+      required: true
