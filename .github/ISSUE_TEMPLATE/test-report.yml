@@ -78,7 +78,7 @@ body:
   - type: input
     id: vsname
     attributes:
-      label: Your Vintage Story username
-      description: So we can match your report to your character on the server. Your GitHub name may differ.
+      label: VS username / Discord
+      description: So we know who to reach out to about this report, separate from your GitHub account. Prefilled if you entered it on the board.
     validations:
       required: true

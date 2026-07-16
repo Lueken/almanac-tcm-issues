@@ -51,6 +51,7 @@ body:
   - type: input
     id: vsname
     attributes:
-      label: Your Vintage Story username
+      label: VS username / Discord
+      description: So we know who to reach out to, separate from your GitHub account.
     validations:
       required: true
