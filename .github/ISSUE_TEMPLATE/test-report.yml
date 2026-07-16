@@ -1,0 +1,84 @@
+name: Test report
+description: Submit a validation result for one Almanac test item. Usually opened prefilled from the testing board.
+title: "[DOMAIN] item"
+labels: ["needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing **The Almanac** on The Quire. One report = one test item.
+        If you reached this from the testing board, the first two fields are already filled in — leave them as they are and fill in the rest from your run.
+
+  - type: input
+    id: item
+    attributes:
+      label: Test item
+      description: What you're validating. Prefilled from the board — leave as-is.
+      placeholder: e.g. WOO / chopping block credits once per log
+    validations:
+      required: true
+
+  - type: textarea
+    id: ask
+    attributes:
+      label: The ask (leave as-is)
+      description: What this item needs to prove. Prefilled from the validation doc.
+      placeholder: Prefilled from the board.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      description: Your headline verdict.
+      options:
+        - "Pass — behaves as the ask describes"
+        - "Fail — did not behave as described"
+        - "Partial — worked, but not fully / not every time"
+        - "Blocked — could not test (say why below)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: detail
+    attributes:
+      label: What actually happened
+      description: Walk through what you did and what you saw. Be specific — exact numbers beat "it worked".
+      placeholder: "Chopped 4 full logs at an IW chopping block. Info tab showed 'chopping +3 practice' once per log, 4 times total. No double-count."
+    validations:
+      required: true
+
+  - type: input
+    id: rank
+    attributes:
+      label: Your rank in the relevant domain at test time
+      placeholder: e.g. WOO Apprentice II (or Untrained)
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: Mod version
+      description: Prefilled from the board. Check it matches what the server is running.
+      placeholder: e.g. 0.3.56-dev
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Screenshots, chat/log lines, or exact repro steps. Drag images straight in.
+      placeholder: Optional but very welcome — a screenshot of the Info tab or the chat line settles most reports.
+    validations:
+      required: false
+
+  - type: input
+    id: vsname
+    attributes:
+      label: Your Vintage Story username
+      description: So we can match your report to your character on the server (your GitHub name may differ).
+    validations:
+      required: true
